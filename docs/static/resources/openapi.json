@@ -338,7 +338,7 @@
           },
           "width": {
             "description": "Width of annotation line",
-            "minimum": 0.0,
+            "minimum": 0,
             "type": "number"
           }
         },
@@ -1309,8 +1309,8 @@
           "confidence_interval": {
             "description": "Width of predicted confidence interval",
             "example": 0.8,
-            "maximum": 1.0,
-            "minimum": 0.0,
+            "maximum": 1,
+            "minimum": 0,
             "type": "number"
           },
           "monthly_seasonality": {
@@ -3655,14 +3655,20 @@
             "type": "boolean"
           },
           "owners": {
-            "$ref": "#/components/schemas/DashboardRestApi.get_list.User2"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardRestApi.get_list.User2"
+            }
           },
           "published": {
             "nullable": true,
             "type": "boolean"
           },
           "roles": {
-            "$ref": "#/components/schemas/DashboardRestApi.get_list.Role"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardRestApi.get_list.Role"
+            }
           },
           "slug": {
             "maxLength": 255,
@@ -3673,7 +3679,10 @@
             "readOnly": true
           },
           "tags": {
-            "$ref": "#/components/schemas/DashboardRestApi.get_list.Tag"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardRestApi.get_list.Tag"
+            }
           },
           "thumbnail_url": {
             "readOnly": true
@@ -13053,7 +13062,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -13150,7 +13159,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "descr": "string",
                     "name": "string"
@@ -13644,7 +13653,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "descr": "string",
                     "name": "string"
@@ -13830,7 +13839,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "ids": [
                     "string"
                   ],
@@ -13928,7 +13937,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "end_dttm": "2024-01-15T10:30:00Z",
                     "json_metadata": "string",
@@ -14221,7 +14230,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "end_dttm": "2024-01-15T10:30:00Z",
                     "json_metadata": "string",
@@ -14811,7 +14820,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -14931,7 +14940,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "cache_timeout": 1,
                     "certification_details": "string",
@@ -15914,7 +15923,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "cache_timeout": 1,
                     "certification_details": "string",
@@ -16639,7 +16648,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -17496,7 +17505,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "certification_details": "string",
                     "certified_by": "string",
@@ -18289,8 +18298,8 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
-                  "last_modified_time": 1.0
+                  "id": 1,
+                  "last_modified_time": 1
                 }
               }
             },
@@ -18945,8 +18954,8 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
-                  "last_modified_time": 1.0,
+                  "id": 1,
+                  "last_modified_time": 1,
                   "result": {
                     "certification_details": "string",
                     "certified_by": "string",
@@ -20568,7 +20577,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -20685,7 +20694,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "allow_ctas": true,
                     "allow_cvas": true,
@@ -21755,7 +21764,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "allow_ctas": true,
                     "allow_cvas": true,
@@ -23345,7 +23354,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -23454,7 +23463,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "always_filter_main_dttm": true,
                     "catalog": "string",
@@ -23743,7 +23752,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "base_model_id": 1,
                     "table_name": "string"
@@ -24568,7 +24577,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "always_filter_main_dttm": true,
                     "cache_timeout": 1,
@@ -26037,7 +26046,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -26785,7 +26794,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -27249,8 +27258,8 @@
                   "result": {
                     "changed_on": "2024-01-15T10:30:00Z",
                     "client_id": "string",
-                    "end_result_backend_time": 1.0,
-                    "end_time": 1.0,
+                    "end_result_backend_time": 1,
+                    "end_time": 1,
                     "error_message": "string",
                     "executed_sql": "string",
                     "id": 1,
@@ -27264,8 +27273,8 @@
                     "select_sql": "string",
                     "sql": "string",
                     "sql_editor_id": "string",
-                    "start_running_time": 1.0,
-                    "start_time": 1.0,
+                    "start_running_time": 1,
+                    "start_time": 1,
                     "status": "string",
                     "tab_name": "string",
                     "tmp_schema_name": "string",
@@ -27484,7 +27493,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -27587,7 +27596,7 @@
                 "type": "Alert",
                 "validator_config_json": {
                   "op": "<",
-                  "threshold": 1.0
+                  "threshold": 1
                 },
                 "validator_type": "not null",
                 "working_timeout": 3600
@@ -27613,7 +27622,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "active": true,
                     "chart": 1,
@@ -28144,7 +28153,7 @@
                     "id": 1,
                     "last_eval_dttm": "2024-01-15T10:30:00Z",
                     "last_state": "string",
-                    "last_value": 1.0,
+                    "last_value": 1,
                     "last_value_row_json": "string",
                     "log_retention": 1,
                     "name": "string",
@@ -28254,7 +28263,7 @@
                 "type": "Alert",
                 "validator_config_json": {
                   "op": "<",
-                  "threshold": 1.0
+                  "threshold": 1
                 },
                 "validator_type": "not null",
                 "working_timeout": 3600
@@ -28280,7 +28289,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "active": true,
                     "chart": 1,
@@ -28411,7 +28420,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "ids": [
                     "string"
                   ],
@@ -28523,7 +28532,7 @@
                     "start_dttm": "2024-01-15T10:30:00Z",
                     "state": "string",
                     "uuid": "550e8400-e29b-41d4-a716-446655440000",
-                    "value": 1.0,
+                    "value": 1,
                     "value_row_json": "string"
                   }
                 }
@@ -28734,7 +28743,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -28840,7 +28849,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "clause": "string",
                     "description": "string",
@@ -29355,7 +29364,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "clause": "string",
                     "description": "string",
@@ -29573,7 +29582,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -30628,7 +30637,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -31479,7 +31488,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -32126,7 +32135,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -32590,7 +32599,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -33234,7 +33243,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -34381,7 +34390,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -35182,7 +35191,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -36701,7 +36710,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -36800,7 +36809,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "description": "string",
                     "name": "string",
@@ -37711,7 +37720,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "description": "string",
                     "name": "string",
@@ -38071,7 +38080,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "count": 1.0,
+                  "count": 1,
                   "description_columns": {
                     "column_name": "A Nice description for the column"
                   },
@@ -38168,7 +38177,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "json_data": "string",
                     "theme_name": "string"
@@ -38941,7 +38950,7 @@
                   "type": "object"
                 },
                 "example": {
-                  "id": 1.0,
+                  "id": 1,
                   "result": {
                     "json_data": "string",
                     "theme_name": "string"
