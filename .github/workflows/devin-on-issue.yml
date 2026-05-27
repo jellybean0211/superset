@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # .devin/ is a git submodule pointing at jellybean0211/superset-devin-demo.
+          # Fetch it so the Dockerfile + src/ are present before the build step.
+          submodules: true
 
       - name: Build spawn container
         working-directory: .devin
