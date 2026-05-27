@@ -78,7 +78,33 @@ ${issueBody || "(no body provided)"}
   - Link to ${issueUrl}
   - One-paragraph root cause / motivation
   - Summary of the change
-  - How you verified it${demoForkNote}
+  - **Reproduction steps** — the minimal user-facing steps that surface the bug (or, for
+    a feature, the acceptance criteria). 3–6 numbered steps. This is the failing scenario,
+    not the test you wrote.
+  - **Blast radius** — list the other call sites / consumers of the code you touched and
+    explicitly state why each remains correct under your change. If you grep'd, say what
+    you grep'd for. If the change is genuinely local (e.g. a leaf component with no other
+    callers), say so plainly.
+  - **Alternatives considered** — one or two alternatives you weighed and why you didn't
+    take them. One sentence each, not an essay. Skip only if the change is a one-line
+    obvious fix with no real alternative.
+  - **Confidence & unknowns** — three short labelled lines:
+    - \`High confidence:\` what you are sure works and why
+    - \`Lower confidence:\` assumptions you made that a reviewer should sanity-check
+    - \`Did not verify:\` scenarios you couldn't exercise (mobile, specific DB engine,
+      large datasets, etc.) — be honest, "none" is rarely the right answer
+  - How you verified it
+  - **Test results** — paste the actual command(s) you ran (e.g. \`npm run test -- foo\`,
+    \`pytest tests/unit_tests/bar.py\`) and their pass/fail summary inside a fenced code
+    block. If a relevant test could not be run in the sandbox, say so explicitly and name
+    what would need to run in CI.
+  - **Screenshots / GIFs** — REQUIRED for any change that affects rendered UI. Capture
+    before/after using the browser tooling available to you. OMIT this section entirely
+    for pure-backend changes; do not write "N/A".
+  - **Out of scope / follow-ups** — anything you deliberately did not address that a
+    reviewer might otherwise ask about (a related bug you noticed, a refactor that would
+    be larger than this PR, etc.). Only include real items you actually noticed — do NOT
+    invent follow-ups to look thorough. If there are none, omit the section.${demoForkNote}
 - Keep the changeset minimal and focused. No drive-by formatting, no unrelated edits.
 
 ## Hard constraints${noUpstreamPushConstraint}
