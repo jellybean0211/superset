@@ -15,6 +15,14 @@ export function buildGenericIssuePrompt({
   issueBody,
   issueUrl,
 }: GenericIssuePromptVars): string {
+  const isFork = upstreamRepo !== targetRepo;
+  const demoForkNote = isFork
+    ? `\n  - A note that this PR is opened to \`${targetRepo}\` as a demo fork; the upstream fix would\n    target ${upstreamRepo}.`
+    : "";
+  const pushTargetNote = isFork ? " (NOT the upstream repo)" : "";
+  const noUpstreamPushConstraint = isFork
+    ? `\n- DO NOT push or open a PR to ${upstreamRepo}. The PR target is \`${targetRepo}\` only.`
+    : "";
   return `You are solving issue #${issueNumber} from ${upstreamRepo}.
 
 ## Issue
@@ -54,7 +62,7 @@ ${issueBody || "(no body provided)"}
 
 6. Run tests relevant to your change (not the full suite).
 
-7. Push a branch to \`https://github.com/${targetRepo}\` (NOT the upstream repo) and open a
+7. Push a branch to \`https://github.com/${targetRepo}\`${pushTargetNote} and open a
    pull request against \`${targetRepo}\`'s default branch.
 
 8. **Completion comment.** Once the PR is open (or you concluded no fix is feasible), post
@@ -70,13 +78,10 @@ ${issueBody || "(no body provided)"}
   - Link to ${issueUrl}
   - One-paragraph root cause / motivation
   - Summary of the change
-  - How you verified it
-  - A note that this PR is opened to \`${targetRepo}\` as a demo fork; the upstream fix would
-    target ${upstreamRepo}.
+  - How you verified it${demoForkNote}
 - Keep the changeset minimal and focused. No drive-by formatting, no unrelated edits.
 
-## Hard constraints
-- DO NOT push or open a PR to ${upstreamRepo}. The PR target is \`${targetRepo}\` only.
+## Hard constraints${noUpstreamPushConstraint}
 - DO NOT modify CI configuration, pre-commit hooks, or unrelated schemas.
 - If you get blocked on environment setup for >30 minutes, stop and post the completion
   comment with the \`⚠️\` outcome.`;
