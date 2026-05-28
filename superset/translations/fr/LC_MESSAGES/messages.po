@@ -18875,4 +18875,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© Attribution de la couche"
-

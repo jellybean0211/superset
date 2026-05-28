@@ -17877,4 +17877,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© Настройки слоя"
-

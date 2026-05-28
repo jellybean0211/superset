@@ -32122,4 +32122,3 @@ msgstr ""
 #, fuzzy
 msgid "© Layer attribution"
 msgstr "© Kerroksen attribuutio"
-

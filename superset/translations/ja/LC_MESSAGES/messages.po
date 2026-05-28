@@ -16837,4 +16837,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© レイヤー帰属情報"
-

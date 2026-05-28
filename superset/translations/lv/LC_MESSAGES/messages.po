@@ -17881,4 +17881,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© Slāņa attiecinājums"
-

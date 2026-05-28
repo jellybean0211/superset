@@ -19042,4 +19042,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© Atribución de la capa"
-

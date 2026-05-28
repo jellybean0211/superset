@@ -17835,4 +17835,3 @@ msgstr ""
 
 msgid "© Layer attribution"
 msgstr "© Атрибут шару"
-

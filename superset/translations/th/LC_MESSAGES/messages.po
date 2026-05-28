@@ -31760,4 +31760,3 @@ msgstr ""
 #, fuzzy
 msgid "© Layer attribution"
 msgstr "© การระบุแหล่งที่มาของเลเยอร์"
-
